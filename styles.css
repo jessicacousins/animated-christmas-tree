@@ -1,0 +1,280 @@
+@import url("https://fonts.googleapis.com/css2?family=Mountains+of+Christmas&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background-color: #000;
+}
+
+h2 {
+  text-align: center;
+  font-size: 5em;
+  color: white;
+  font-family: "Mountains of Christmas", serif;
+}
+
+.fa-snowflake {
+  position: absolute;
+  color: #fff;
+  opacity: 0.5;
+  font-size: 1em;
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-100vh);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
+
+.tree {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.star {
+  color: rgb(233, 233, 96);
+  font-size: 30px;
+  text-shadow: 0 0 15px rgb(233, 233, 96);
+  animation: rotate-star 2.4s linear infinite;
+  animation-delay: calc(var(--i) * -1s);
+}
+
+@keyframes rotate-star {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.candycane {
+  color: rgb(204, 17, 17);
+  font-size: 30px;
+  position: absolute;
+  text-shadow: 0 0 15px rgb(233, 96, 96);
+  animation: animateCandyColor 7.2s linear infinite;
+  z-index: 10;
+  animation: rotate-candycanes 2.4s linear infinite;
+  animation-delay: calc(var(--i) * -1s);
+}
+
+@keyframes rotate-candycanes {
+  0% {
+    transform: rotate(0deg) scale(0);
+  }
+  50% {
+    transform: rotate(180deg) scale(1);
+  }
+  100% {
+    transform: rotate(360deg) scale(0);
+  }
+}
+
+@keyframes animateCandyColor {
+  0% {
+    color: hsl(0, 100%, 50%);
+  }
+  25% {
+    color: hsl(0, 100%, 65%);
+  }
+  50% {
+    color: hsl(0, 100%, 75%);
+  }
+  75% {
+    color: hsl(0, 100%, 65%);
+  }
+  100% {
+    color: hsl(0, 100%, 50%);
+  }
+}
+
+/* top of tree  */
+.candycane:nth-of-type(1) {
+  top: 35px;
+  left: 75px;
+}
+.candycane:nth-of-type(2) {
+  top: 85px;
+  left: 100px;
+}
+.candycane:nth-of-type(3) {
+  top: 95px;
+  left: 45px;
+}
+
+/* middle of tree  */
+.candycane:nth-of-type(4) {
+  top: 135px;
+  left: 70px;
+}
+.candycane:nth-of-type(5) {
+  top: 175px;
+  left: 110px;
+}
+.candycane:nth-of-type(6) {
+  top: 175px;
+  left: 40px;
+}
+
+/* bottom of tree  */
+.candycane:nth-of-type(7) {
+  top: 210px;
+  left: 70px;
+}
+.candycane:nth-of-type(8) {
+  top: 260px;
+  left: 120px;
+}
+.candycane:nth-of-type(9) {
+  top: 263px;
+  left: 20px;
+}
+
+@keyframes animateTreeColor {
+  0% {
+    border-bottom-color: hsl(120, 96%, 11%);
+  }
+  25% {
+    border-bottom-color: hsl(120, 98%, 22%);
+  }
+  50% {
+    border-bottom-color: hsl(120, 80%, 56%);
+  }
+  75% {
+    border-bottom-color: hsl(120, 98%, 22%);
+  }
+  100% {
+    border-bottom-color: hsl(120, 96%, 11%);
+  }
+}
+
+.triangle {
+  width: 0;
+  height: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-bottom: 70px solid rgb(4, 79, 4);
+  position: relative;
+  border-radius: 15px;
+  z-index: 1;
+  animation: animateTreeColor 7.2s linear infinite;
+}
+
+.triangle-1 {
+  border-left-width: 50px;
+  border-right-width: 50px;
+  border-bottom-width: 100px;
+  margin-bottom: -60px;
+}
+
+.triangle-2 {
+  border-left-width: 70px;
+  border-right-width: 70px;
+  border-bottom-width: 140px;
+  margin-bottom: -90px;
+}
+
+.triangle-3 {
+  border-left-width: 90px;
+  border-right-width: 90px;
+  border-bottom-width: 180px;
+  margin-bottom: -30px;
+}
+
+.trunk {
+  width: 20px;
+  height: 40px;
+  background-color: #8b4513;
+  position: relative;
+  margin-top: 30px;
+  border-radius: 3px;
+}
+
+.ornament {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgb(78, 121, 196);
+  background: radial-gradient(
+    circle closest-side at center,
+    white 10%,
+    rgb(0, 174, 255) 70%
+  );
+  z-index: 14;
+  animation: float 3s infinite ease-in-out;
+}
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+    filter: hue-rotate(0deg);
+  }
+  50% {
+    transform: translateY(-5px);
+    filter: hue-rotate(360deg);
+  }
+}
+
+/* tree ornaments area 1  */
+.ornament:nth-of-type(10) {
+  top: 20%;
+  left: 50%;
+}
+.ornament:nth-of-type(11) {
+  top: 37%;
+  left: 17%;
+}
+.ornament:nth-of-type(12) {
+  top: 37%;
+  left: 73%;
+}
+/* tree ornaments area 2  */
+.ornament:nth-of-type(13) {
+  top: 50%;
+  left: 40%;
+}
+.ornament:nth-of-type(14) {
+  top: 60%;
+  left: 8%;
+}
+.ornament:nth-of-type(15) {
+  top: 60%;
+  left: 83%;
+}
+
+/* tree ornaments area 3  */
+.ornament:nth-of-type(16) {
+  top: 75%;
+  left: 55%;
+}
+.ornament:nth-of-type(17) {
+  top: 85%;
+  left: -2%;
+}
+.ornament:nth-of-type(18) {
+  top: 85%;
+  left: 95%;
+}
