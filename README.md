@@ -1,5 +1,11 @@
 # Animated Christmas Tree
 
+## Netlify
+
+```
+https://melodious-cassata-1a4f58.netlify.app
+```
+
 ## Description
 
 Original festive animated Christmas tree, complete with falling snowflakes, twirling star, swirling candy canes, and colorful ornaments. The tree is built using HTML, CSS, and a bit of JavaScript for the falling snow effect. This project served as a canvas for practicing my skills in keyframes and element positioning.
